@@ -1,11 +1,54 @@
+
+<ons-alert-dialog cancelable #alertDialog>
+  <div class="alert-dialog-title">Warning!</div>
+  <div class="alert-dialog-content">
+    This is just an example.
+  </div>
+  <div class="alert-dialog-footer">
+    <ons-alert-dialog-button (click)="closeaAlertDialog()">OK</ons-alert-dialog-button>
+  </div>
+</ons-alert-dialog>
+
 <ng-sidebar-container>
   <!-- A sidebar -->
   <ng-sidebar [(opened)]="opened">
+    <ons-page>
     <p>Sidebar contents</p>
+    <button (click)="toggleSidebar()">Toggle sidebar</button>
+    <ons-list>
+      <ons-list-header>Notifications</ons-list-header>
+      <ons-list-item tappable (click)="alert()">Alert</ons-list-item>
+      <ons-list-item tappable (click)="confirm()">Confirmation</ons-list-item>
+      <ons-list-item tappable (click)="prompt()">Prompt</ons-list-item>
+      <ons-list-item tappable (click)="toast()">Toast</ons-list-item>
+
+      <ons-list-header>Components</ons-list-header>
+      <ons-list-item tappable (click)="showAlerDiglog()">Alert Dialog</ons-list-item>
+
+      <!-- <ons-list-item tappable (click)="/simpledialog">Simple Dialog</ons-list-item>
+      <ons-list-item tappable (click)="/alertdialog">Alert Dialog</ons-list-item> -->
+    </ons-list>
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/simpledialog" routerLinkActive="active"
+            >Simple Dialog</a
+          >
+        </li>
+        <li>
+          <a routerLink="/alertdialog" routerLinkActive="active"
+            >Alert Dialog</a
+          >
+        </li>
+      </ul>
+      <router-outlet></router-outlet>
+    </nav>
+    </ons-page>
   </ng-sidebar>
 
   <!-- Page content -->
   <div ng-sidebar-content>
     <button (click)="toggleSidebar()">Toggle sidebar</button>
+    <!-- <router-outlet></router-outlet> -->
   </div>
 </ng-sidebar-container>

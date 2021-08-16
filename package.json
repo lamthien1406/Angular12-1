@@ -19,6 +19,8 @@
     "@angular/platform-browser-dynamic": "~12.1.0",
     "@angular/router": "~12.1.0",
     "ng-sidebar": "^9.4.2",
+    "ngx-onsenui": "^7.0.0",
+    "onsenui": "^2.11.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
