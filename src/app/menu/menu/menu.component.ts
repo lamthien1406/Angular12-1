@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ContentpageComponent } from '../contentpage/contentpage.component';
-import { MenuService } from '../menu-service/menu-service.component';
-import { SidepageComponent } from '../sidepage/sidepage.component';
+import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-menu',
@@ -10,13 +8,20 @@ import { SidepageComponent } from '../sidepage/sidepage.component';
 })
 export class MenuComponent implements OnInit {
 
-  sidePage = SidepageComponent;
-  contentPage = ContentpageComponent;
   @ViewChild('splitter') splitter: any;
 
-  constructor(private menuService: MenuService) { 
-    this.menuService.menu$.subscribe(() => 
+  constructor() { 
+    this.menu$.subscribe(() => 
     this.splitter.nativeElement.side.open());
+  }
+
+  subject = new Subject();
+  get menu$(): Observable<any> {
+    return this.subject.asObservable();
+  }
+  
+  openMenu() {
+    this.subject.next();
   }
 
   ngOnInit(): void {

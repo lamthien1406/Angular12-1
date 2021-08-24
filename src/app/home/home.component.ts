@@ -15,11 +15,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  loadload(){
-    console.log('aa')
-    this.router.navigateByUrl('load');
-  }
-
   loadMenu(){
     this.router.navigateByUrl('menu');
   }

@@ -1,9 +1,40 @@
 <ons-page>
   <ons-splitter #splitter>
-    <ons-splitter-side [page]="sidePage" side="left" width="220px" collapse swipeable
-    >
+    <ons-splitter-side side="left" width="220px" collapse swipeable>
+      <ons-page>
+        <ons-toolbar>
+          <div class="center">Left Page</div>
+        </ons-toolbar>
+        <div class="background"></div>
+        <div class="content"></div>
+        <br />
+        <br />
+        <div class="content">
+          <ons-list>
+            <ons-list-item tappable>Alert</ons-list-item>
+            <ons-list-item tappable>Confirmation</ons-list-item>
+            <ons-list-item tappable>Prompt</ons-list-item>
+            <ons-list-item tappable>Toast</ons-list-item>
+          </ons-list>
+        </div>
+      </ons-page>
     </ons-splitter-side>
 
-    <ons-splitter-content [page]="contentPage"> </ons-splitter-content>
+    <ons-splitter-content>
+      <ons-page>
+        <ons-toolbar>
+          <div class="left">
+            <ons-toolbar-button (click)="openMenu()">
+              <ons-icon icon="ion-ios-menu, material:md-menu"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+          <div class="center">Content Page</div>
+        </ons-toolbar>
+        <br />
+        <p style="text-align: center; opacity: 0.6; padding-top: 20px">
+          Swipe right to open the menu!
+        </p>
+      </ons-page>
+    </ons-splitter-content>
   </ons-splitter>
 </ons-page>
