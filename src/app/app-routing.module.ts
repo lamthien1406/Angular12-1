@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoadmenuComponent } from './menu/loadmenu/loadmenu.component';
+import { MenuComponent } from './menu/menu/menu.component';
 
 const routes: Routes = [
-  // { path: 'simpledialog', component: SimpledialogComponent },
+  { path: 'load', component: LoadmenuComponent },
+  { path: 'menu', component: MenuComponent },
 
 ];
 
